@@ -3,7 +3,7 @@ import { json } from "@remix-run/node"
 import { ClientOnly } from "remix-utils/client-only"
 import { useLoaderData } from '@remix-run/react'
 import PayjpCheckout from '~/components/func/payjp-checkout'
-import type { PayjpCheckoutPayload, PayjpCheckoutErrorPayload } from '~/components/func/payjp-checkout'
+import type { PayjpCheckoutPayload, PayjpCheckoutErrorPayload } from '~/types'
 
 export const meta: MetaFunction = () => {
   return [{ title: "Remix Pay.jp Checkout sample App" }];
