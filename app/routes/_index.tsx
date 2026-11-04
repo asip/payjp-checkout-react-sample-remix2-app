@@ -21,9 +21,7 @@ export default function Index() {
   const data = useLoaderData<typeof loader>()
 
   const payjpCheckoutProps = {
-    dataKey: data.env.PAYJP_PUBLIC_KEY,
-    dataText: 'クレジットカードで支払う',
-    dataPartial: 'true',
+    data: { key: data.env.PAYJP_PUBLIC_KEY ?? '', text: 'クレジットカードで支払う', partial: 'true' },
     onCreatedHandler: onCreated,
     onFailedHandler: onFailed,
   }
