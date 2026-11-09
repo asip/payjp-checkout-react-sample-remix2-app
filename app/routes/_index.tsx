@@ -22,16 +22,16 @@ export default function Index() {
 
   const payjpCheckoutProps = {
     data: { key: data.env.PAYJP_PUBLIC_KEY ?? '', text: 'クレジットカードで支払う', partial: 'true' },
-    onCreatedHandler: onCreated,
-    onFailedHandler: onFailed,
+    onSuccess,
+    onError,
   }
 
-  function onCreated(payload: PayjpCheckoutPayload) {
+  function onSuccess(payload: PayjpCheckoutPayload) {
     //console.log(payload)
     console.log(payload.token)
   }
 
-  function onFailed(payload: PayjpCheckoutErrorPayload) {
+  function onError(payload: PayjpCheckoutErrorPayload) {
     console.log(payload.message)
   }
 
